@@ -1,0 +1,23 @@
+<div class="container">
+	<h1>
+		Device List
+	</h1>
+	<div class="col-md-2">
+		<label>
+			Search devices:
+			<input #searchBox id="search-box" (keyup)="search(searchBox.value)"  />
+		</label>
+	</div>
+	<div class="col-md-10">
+		<ul class="devices">
+			<li *ngFor="let device of devices | async">
+				<p>{{device.hostname}}</p>
+				<p>{{device.ipAddress}}</p>
+				<a class="btn btn-info" routerLink="device-edit/{{device.hostname}}">Edit</a>
+				<a class="btn btn-info" routerLink="device-detail/{{device.hostname}}">View</a>
+			</li>
+		</ul>
+		<a class="btn btn-info" routerLink="/device-create">Add a device</a>
+		<a class="btn btn-info" routerLink="/device-group-list">View the device group list</a>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container">
+	<h1>
+		Create Device Group
+	</h1>
+	<form class="form-group" class="form-group" [formGroup]="createDeviceGroupForm" (ngSubmit)="onSubmit()">
+		<label>
+			Group Name:
+			<input type="text" class="form-control" formControlName="groupName" required/>
+		</label>
+		<label>
+			Description:
+			<input type="text" class="form-control" formControlName="description"/>
+		</label>
+		<ul class="devices">
+			<li *ngFor="let device of device-group.devices">
+				<p>
+					<a class="btn btn-info" routerLink="/device-detail/{{device.hostname}}">{{device.hostname}}</a>
+					Device IP Address: {{device.ipAddress}}
+				</p>
+			</li>
+		</ul>
+		<input class="btn btn-info" type="submit" value="Submit"/>
+	</form>
+	<a class="btn btn-info" routerLink="/device-group-list">Cancel</a>
+</div>

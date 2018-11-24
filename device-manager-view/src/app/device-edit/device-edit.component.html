@@ -1,0 +1,17 @@
+<div class="container">
+	<h1>
+		Edit Device
+	</h1>
+	<form class="form-group" class="form-group" [formGroup]="editDeviceForm" (ngSubmit)="onSubmit()">
+		<label>
+			Hostname:
+			<input type="text" class="form-control" formControlName="hostname" required/>
+		</label>
+		<label>
+			IP Address:
+			<input type="text" class="form-control" formControlName="ipAddress"/>
+		</label>
+		<input class="btn btn-info" type="submit" value="Submit"/>
+	</form>
+	<a class="btn btn-info" routerLink="/device-list">Cancel</a>
+</div>

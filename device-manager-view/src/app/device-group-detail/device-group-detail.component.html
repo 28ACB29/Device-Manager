@@ -1,0 +1,14 @@
+<div class="container">
+	<h1>
+		Device Group Details
+	</h1>
+	<p>Device Group Name: {{device-group.groupName}}</p>
+	<p>Device Group Description: {{device-group.description}}</p>
+	<ul class="devices">
+		<li *ngFor="let device of device-group.devices">
+			<a class="btn btn-info" routerLink="/device-detail/{{device.hostname}}">{{device.hostname}}</a>
+			<p>Device IP Address: {{device.ipAddress}}</p>
+		</li>
+	</ul>
+	<a class="btn btn-info" routerLink="/device-group-list">Go Back to Device Group List</a>
+</div>
